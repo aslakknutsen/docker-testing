@@ -1,0 +1,567 @@
+@import 'prism/themes/prism-okaidia.css'
+@import "./fonts.css"
+
+td.spaceleft
+  padding-left: .4em
+
+pre.small
+  font-size: .45em
+  padding: 0
+  background-color: #303030 !important
+
+sup
+  font-size: 0.3em
+  position: relative
+  top: -1.5em
+
+li:before
+  content: ''
+
+li.bigfont
+ font-size: 2.2em
+
+.gothicfont
+  font-family: 'League Gothic'
+  font-weight: bold;
+
+.filegothic
+  font-size: 1em
+
+.smallgothic
+  font-size: 2.2em
+
+.biggothic
+  font-size: 3.2em
+
+h1
+  font-family: 'League Gothic'
+  font-weight: bold;
+  font-size: 4.2em
+
+h1.small
+  font-size: 3.2em
+
+h1 a
+  border: none
+
+h1.name
+  font-size: 1.3em
+  margin: 0
+
+h2
+  font-weight: 900
+
+
+h2.cube
+  margin-bottom: -250px
+
+iframe
+  width: 100%
+  height: 100%
+
+.main-wrap
+  overflow: hidden
+
+.leftbar
+  float: left
+  width: 50%
+
+.rightbar
+  float: right
+  width: 50%
+
+div.square
+  position: relative
+  display:inline-block
+  max-width:450px
+  min-height:0.5em
+  padding: 1px
+  font-size: .65em
+  color: #000000
+  margin-top: 5px
+  background: #F8FEEA
+  border: #AFC777 solid 3px
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  border-radius: 4px
+
+div.dividebyfour
+  position:fixed
+  width:50%
+  height:50%
+
+.NW
+  top:0
+  left:0
+
+
+.NE
+  top:0
+  left:50%
+
+
+.SW
+  top:50%
+  left:0
+
+
+.SE
+  top:50%
+  left:50%
+
+
+.footer
+  font-size: 0.5em
+  color:white
+  position: fixed
+  text-align:left
+  bottom: 0
+  left: 0
+  padding: 10px
+
+.avatar
+  filter: grayscale(30%)
+  width: 120px
+  height: @width
+  border-radius: 100%
+  margin-bottom: .5em
+
+.schemas
+  width: 90%
+  border-radius: 10px
+  margin-bottom: 10px
+
+.schemash
+  height: 90%
+  border-radius: 10px
+  margin-bottom: 10px
+
+.schemashh
+  height: 80%
+  border-radius: 10px
+  margin-bottom: 10px
+
+.listhighlight
+  border-radius: 10px;
+  background: #0F7784;
+  padding: 2px;
+  width: 200px
+
+.listsleft
+  text-align: left
+  list-style-type: none
+
+.description
+  font-size: 0.6em
+
+.logos
+  width: 800px
+
+.cloudbees
+  width: 198px
+  height: 76px
+  margin: .5em 0
+
+.two-columns
+  -webkit-column-count: 3
+  -moz-column-count: 3
+  column-count: 3
+
+.code-side
+  float:left
+  display:inline-block
+
+.side-by-side
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  margin: 0.5em
+.images
+  text-align:center;
+
+.bespoke-slide
+  z-index: 1
+
+.bold
+  font-weight: bold;
+
+pre
+  padding: 2em !important
+
+pre, code
+  margin: 0 !important
+
+.backdrop
+  &--title
+    background-image: url('../images/peixera.jpg')
+    background-position: 5 0
+    filter: brightness(100%);
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--speed
+    background: url('../images/speed.jpg')
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.70
+  &--indy
+    background: url('../images/indy.gif')
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.40
+  &--contract
+    background: url('../images/contract.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.55
+  &--unittt
+    background: url('../images/unittestt.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.55
+  &--deming
+    background: url('../images/deming.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.55
+  &--arquillianf
+    background: url('../images/arquillian.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--adabored
+    background: url('../images/adabored.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.75
+  &--micro
+    background: url('../images/micro.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.35
+  &--mac
+    background: url('../images/mac.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.4
+  &--whales
+    background: url('../images/whales.png') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.6
+  &--orch
+    background: url('../images/orch.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.5
+  &--ci
+    background: url('../images/ci.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.40
+  &--containerstack
+    background: url('../images/containerstack.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.40
+  &--borg
+    background: url('../images/borg.gif')
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.80
+  &--q
+    background: url('../images/q.gif')
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.90
+  &--docker
+    background-color: white
+    background-image: url('../images/docker.png')
+    background-size: 20%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: 0.5
+  &--emptyship
+    background: url('../images/emptyship.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.50
+  &--whale
+    background: url('../images/whale.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.50
+  &--traceability
+    background-color: white
+    background-image: url('../images/traceability.png')
+    background-size: 50%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--hub
+    background-color: white
+    background-image: url('../images/hub.png')
+    background-size: 50%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--templateslave
+    background-color: white
+    background-image: url('../images/docker-build.png')
+    background-size: 50%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--buildpush
+    background-color: white
+    background-image: url('../images/buildpush.png')
+    background-size: 20%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--calm
+    background: url('../images/calm.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.70
+  &--multiple
+    background: url('../images/multiple.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.40
+  &--rest
+    background: url('../images/rest.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.60
+  &--version
+    background: url('../images/version.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.50
+  &--books
+    background: url('../images/books.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.40
+  &--money
+    background: url('../images/money.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.4
+  &--branch
+    background: url('../images/branch.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.8
+  &--elsa
+    background: url('../images/Elsa.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.70
+  &--arquillian
+    background-color: white
+    background-image: url('../images/arquillian.png')
+    background-size: 20%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: .4
+  &--pmd
+    background-color: white
+    background-image: url('../images/pmd_logo.png')
+    background-size: 20%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: .4
+  &--jacoco
+    background-color: black
+    background-image: url('../images/jacoco.png')
+    background-size: 30%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: 0.75
+  &--jwt
+    background-color: white
+    background-image: url('../images/jwt_logo.svg')
+    background-size: 40%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: 0.25
+  &--appid
+    background-color: black
+    background-image: url('../images/appid.png')
+    background-size: 50%
+    background-repeat: no-repeat
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--packaging
+    background: url('../images/packaging.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.85
+  &--engine
+    background: url('../images/engine.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.40
+  &--fence
+    background: url('../images/_fence.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.70
+  &--railyard
+    background: url('../images/railyard.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.30
+  &--keys
+    background: url('../images/keys.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.45
+  &--adathink
+    background: url('../images/adathink.jpg') no-repeat center center fixed
+    background-size: cover
+    filter: saturate(80%);
+    &.bespoke-backdrop-active
+      opacity: 0.70
+  &--alexoh
+    background: url('../images/alexoh.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.50
+  &--alexband
+    background: url('../images/alexband.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--test
+    background: url('../images/test.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.50
+  &--silos
+    background: url('../images/silos.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.70
+  &--adarise
+    background: url('../images/adarise.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.80
+  &--chicken
+    background: url('../images/chicken.jpg') no-repeat center center fixed
+    background-size: cover
+    &.bespoke-backdrop-active
+      opacity: 0.70
+  &--ending
+    background-image: url('../images/end.jpg')
+    &.bespoke-backdrop-active
+      opacity: 0.65
+  &--angularjs
+    background-color: white
+    background-image: url('../images/angularjs.png')
+    background-size: 30%
+    background-repeat: no-repeat
+    transition-delay: 1s
+    &.bespoke-backdrop-active
+      opacity: 0.15
+    &.bespoke-backdrop-after
+      transition-delay: 0s
+    &.bespoke-backdrop-before
+      transition-delay: 2s
+  &--yellow
+    background: #D2D22E
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--green
+    background: #00CC00
+    &.bespoke-backdrop-active
+      opacity: 1
+  &--still
+    transition: opacity 1s ease
+    transform: none
+  &--bw
+    filter: grayscale(100%)
+
+.yellow
+  color: black
+  h1
+    border-color: currentColor
+
+.green
+  color: black
+  h1
+    border-color: currentColor
+
+.lists
+  text-align: center
+  list-style-type: none
+
+.underline
+  padding-bottom: 0.25em;
+  border-top-color: rgb(221, 221, 221);
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-right-color: rgb(221, 221, 221);
+  border-right-style: solid;
+  border-right-width: 0;
+  border-bottom-color: rgb(221, 221, 221);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgb(221, 221, 221);
+  border-left-style: solid;
+  border-left-width: 0;
+
+.important
+  color: #f04958
+
+.black
+  color: black
+
+.green
+  color: green
+
+.yellowColor
+  color: yellow
+
+.blue
+  color: blue
+
+.background-title
+  background-color: rgba(250,250,250,0.6);
+
+.title-single-words
+    word-spacing: 9999px
+    line-height: 1.5em
+    overflow: hidden
+
+.bespoke-slide aside
+  display: none
+
+.image-caption
+  position: absolute
+  bottom: 1.5em
+  right: 0
+  //margin: 0 auto;
+  //width: 100%;
+  background-color: rgba(250,250,250,0.6);
+  color: #fff
+  padding: 0.25em 0.25em 0.1em 0.25em
+
+.bullet.expand
+  transition: all 2s ease
+  opacity: 0
+  overflow-x: hidden
+  overflow-y: visible
+  max-width: 0
+  display: inline-block
+  white-space: nowrap
+  text-align: center
+  line-height: 1.1em
+  position: relative
+  top: .2em
+  &.bespoke-bullet-active
+    opacity: 1
+    max-width: 500px

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Dockerized system testing, with a dash of chaos</title>
+  <link rel="stylesheet" type="text/css" href="build/build.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <body>
+    <article>
+      <section data-bespoke-backdrop="backdrop backdrop--title" class="title undefined">
+        <h2 class="gothicfont smallgothic">Dockerized system testing</h2>
+        <h3 class="bold"><span class='important'>with a dash of chaos</span></h3><i class="fa fa-twitter-square"><span class='gothicfont' style='font-size:1em; letter-spacing: 0.05em;'>&nbsp;alexsotob &nbsp;</span></i>
+      </section>
+      <section>
+        <div class="main-wrap">
+          <div class="leftbar">
+            <h2 style="font-size:2em" class="gothicfont">Alex Soto</h2><br>
+            <h2 style="font-size:1em" class="gothicfont important">Red Hat Engineer</h2>
+            <h2 style="font-size:1em" class="gothicfont">Open Source Advocate</h2>
+            <h2 style="font-size:1em" class="gothicfont important">@alexsotob</h2><img src="../images/public.png" style="width:40%">
+          </div>
+          <div class="rightbar"><img src="images/family.jpg" style="width:100%"></div>
+        </div>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--adarise" class="adarise undefined">
+        <h2 class="biggothic gothicfont">Questions</h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--mac" class="mac undefined">
+        <h1 class="small"><span class='important'>Software</span> is eating the <span class='important'>world</span></h1>
+        <aside role="note">Every business is in the sw business, even landed ni traditional business Uber, AirBnb, JustEat</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><img src="images/tesla-news.png" class="schemash">
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><img src="images/airport.png" class="schemash">
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><img src="images/casino.png" class="schemash">
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--test" class="test undefined">
+        <h2 class="gothicfont"><span class='important'>Automatic Tests</span> as Solution</h2>
+        <aside role="note">Unit, Integration, Component, Contract, Security, e2e</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--unittt" class="unittt undefined">
+        <h2 class="gothicfont">Unit tests <span class='important'>are not enough</span></h2>
+        <aside role="note">TDD, 100%coverage, but when you deploy, JPA, container features</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--contract" class="contract undefined">
+        <h2 class="gothicfont"><span class='important'>Sociable</span> Unit Tests</h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--indy" class="indy undefined">
+        <h2 class="gothicfont">Would it Work in <span class='important'>Production</span></h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--ci" class="ci undefined">
+        <h2 class="gothicfont"><span class='important'>High-level Tests</span> Running in <br/> <span class='important'>Production-like</span> environment</h2>
+        <aside role="note">Problem preparing containers, manual steps, maven plugin, debuging (embeded)</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--arquillianf" class="arquillianf undefined">
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">What is <span class='important'>Arquillian</span>?</h2>
+        <ul class="lists">
+          <li><span class='important'>Middleware</span> for your <span class='important'>tests</span></li>
+          <li>Fills the <span class='important'>gap</span> between Unit/Integration tests</li>
+          <li>Child's game</li>
+          <li>Any kind if high-level tests</li>
+          <li>JavaEE and <span class='important'>beyond</span></li>
+          <li><span class='important'>Open Source</span></li>
+        </ul>
+        <aside role="note">Segon punt explicar lifecycle</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">build.gradle</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">apply plugin: "io.spring.dependency-management"
+
+dependencyManagement {
+  imports {
+    mavenBom 'org.jboss.arquillian:arquillian-bom:1.1.10.Final'
+  }
+} </code><br><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">dependencies {
+  testCompile group: 'org.jboss.arquillian.junit', name: 'arquillian-junit-container'</code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;testCompile 'org.apache.tomee:arquillian-tomee-remote:7.0.0'
+}
+</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">PlanetsTest.java</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">@RunWith(Arquillian.class)
+public class PlanetServiceAPITest {
+</code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;@Deployment(testable = false)
+&nbsp;&nbsp;public static WebArchive createDeployment() {
+&nbsp;&nbsp;&nbsp;&nbsp;return ShrinkWrap.create(WebArchive.class)
+      .addClasses(SwapiGateway.class, PlanetService.class, ...)
+      .addAsResource("swapitest.properties", "swapi.properties");
+&nbsp;&nbsp;}
+</code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;@ArquillianResource
+&nbsp;&nbsp;URL url;
+
+&nbsp;&nbsp;@Test
+&nbsp;&nbsp;public void shouldReturnTheAverage() {
+&nbsp;&nbsp;&nbsp;&nbsp;final String average = RestAssured.get(url.toExternalForm() + 
+                          "rest/planet/orbital/average").asString();
+&nbsp;&nbsp;&nbsp;&nbsp;assertThat(average, is("1699.42"));
+&nbsp;&nbsp;}
+}</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">Demo</h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">Principles of <span class='important'>Arquillian</span>?</h2>
+        <ul class="lists">
+          <li><span class='important'>Portable</span> tests</li>
+          <li>Executable form <span class='important'>IDE</span> and <span class='important'>buildtool</span></li>
+          <li><span class='important'>Reuse</span> exitsing frameworks</li>
+          <li><span class='important'>Flexible</span> to adapt technologies</li>
+          <li><span class='important'>Extensible</span> to new platforms</li>
+          <li>Ease of <span class='important'>deployment</span></li>
+        </ul>
+        <aside role="note">Maven importer</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--whales" class="whales undefined">
+        <h2 class="gothicfont">Docker</h2>
+        <aside role="note">automates deployment of software containers</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><img style="width:75%;height:75%" src="images/dockerworkflow.png" class="schemashh">
+        <aside role="note">Arquillian Cube</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--borg" class="borg undefined">
+        <h2 class="gothicfont">Arquillian <span class='important'>Cube</span></h2>
+        <aside role="note">Arquillian extension for managing lifecycle</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">What is <span class='important'>Arquillian</span>?</h2>
+        <ul class="lists">
+          <li>Manage lifecycle of <span class='important'>Docker</span> containers</li>
+          <li>Uses <span class='important'>Arquillian</span> remote adapters</li>
+          <li>Orchestrate containers</li>
+          <li>Support for containerless systems</li>
+          <li>Ready for <span class='important'>Docker Machine</span></li>
+        </ul>
+        <aside role="note">Docker machine means testing any platform with docker support</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">build.gradle</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">dependencies {
+  testCompile 'org.arquillian.cube:arquillian-cube-docker:1.0.0.Alpha11'
+}</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">src/test/resources/arquillian.xml</h2>
+        <pre class="small language-xml"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">&lt;arquillian&gt;
+
+  &lt;extension qualifier="docker"&gt;
+      &lt;property name="machineName"&gt;dev&lt;/property&gt;
+      &lt;property name="definitionFormat"&gt;COMPOSE&lt;/property&gt;
+      &lt;property name="dockerContainersFile"&gt;docker-compose.yml&lt;/property&gt;
+  &lt;/extension&gt;
+  </code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;&lt;container qualifier="tomcat"&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;configuration&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="user"&gt;admin&lt;/property&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="pass"&gt;mypass&lt;/property&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;
+&nbsp;&nbsp;&lt;/container&gt;
+&lt;/arquillian&gt;</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">docker-compose.yml</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">tomcat:
+  env_file: envs
+  image: tutum/tomcat:7.0
+  ports:
+      - "8089:8089"
+      - "8088:8088"
+      - "8081:8080"
+  links:
+      - pingpong:pingpong
+      
+  pingpong:
+    image: jonmorehouse/ping-pong
+    ports:
+      - "8080:8080"
+      </code></pre>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">PingPongTest.java</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">@RunWith(Arquillian.class)
+public class HelloWorldServletTest {
+
+  @Deployment(testable=false)
+  public static WebArchive create() {
+      return ShrinkWrap.create(WebArchive.class, "hello.war")
+          .addClass(HelloWorldServlet.class);
+  }
+  </code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;@HostIp
+&nbsp;&nbsp;String hostIp;
+
+&nbsp;&nbsp;@HostPort(containerName = "tomcat", value = 8080)
+&nbsp;&nbsp;int tomcatPort;
+</code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;@Test
+&nbsp;&nbsp;public void test(@ArquillianResource URL base) throws IOException {
+&nbsp;&nbsp;&nbsp;&nbsp;URL obj = new URL(base, "HelloWorld");
+&nbsp;&nbsp;}
+
+</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">Demo</h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--emptyship" class="emptyship undefined">
+        <h2 class="gothicfont">Containerless</h2>
+        <aside role="note">Previous demo the image must be created before test, want to use Shrinkwrap for containerless too (nodejs, ...)</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">What is <span class='important'>Containerless</span>?</h2>
+        <ul class="lists">
+          <li>Runs any application that runs on <span class='important'>Docker</span></li>
+          <li>Including but <span class='important'>not limited</span> Nodejs, Wildfly Swarm, Spring Boot, Vert.x, Go</li>
+          <li><span class='important'>Shrinkwrap</span> support</li>
+        </ul>
+        <aside role="note">Basically Shrinkwrap copies content into known location for docker build</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">build.gradle</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">dependencies {
+  testCompile 'org.arquillian.cube:arquillian-cube-containerless:1.0.0.Alpha11'
+}</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">NodejsTest.java</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">@RunWith(Arquillian.class)
+public class NodeTest {
+
+    @Deployment(testable = false)
+    public static GenericArchive createDeployment() {
+        return ShrinkWrap.create(GenericArchive.class, "app.tar")
+                .add(new FileAsset(new File("src/test/js/index.js")), "index.js")
+                .add(new FileAsset(new File("src/test/js/package.json")), "package.json");
+    }
+    
+    @Test
+    public void shouldReturnMessageFromNodeJs(@ArquillianResource URL base) {
+    }
+}</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">DockerfileTemplate</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">FROM node:0.11.14
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+ADD ${deployableFilename} /usr/src/app
+RUN npm install
+EXPOSE 8080
+
+CMD [ "npm", "start" ]</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">docker-compose.yml</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">nodeexample:
+  build: src/test/resources
+  </code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">arquillian.xml</h2>
+        <pre class="small language-xml"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">&lt;extension qualifier="docker"&gt;
+  &lt;property name="machineName"&gt;dev&lt;/property&gt;
+&lt;/extension&gt;
+</code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&lt;container qualifier="containerless" default="true">
+  &lt;configuration>
+    &lt;property name="containerlessDocker"&gt;nodeexample&lt;/property&gt;
+  &lt;/configuration&gt;
+&lt;/container&gt;</code></pre>
+        <aside role="note">Explain lifecycle</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">Demo</h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--containerstack" class="containerstack undefined">
+        <h2 class="gothicfont"><span class='important'>Container Object</span> pattern</h2>
+        <aside role="note">Like Page Object (obj inmem representation)</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">What are <span class='important'>Container Objects</span>?</h2>
+        <ul class="lists">
+          <li><span class='important'>Encapsulate</span> containers (Operations and Configuration)</li>
+          <li>Single Responsibility</li>
+          <li><span class='important'>Reuse</span></li>
+        </ul>
+        <aside role="note">JAR file for reuse (put in Classpath and thats all)</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">ping-pong-container.jar</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">@Cube(value = "pingpong", portBinding = "5000->8080/tcp")
+public class PingPongContainer {
+</code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;@HostIp
+&nbsp;&nbsp;String dockerHost;
+
+&nbsp;&nbsp;@HostPort(8080)
+&nbsp;&nbsp;private int port;
+
+&nbsp;&nbsp;@ArquillianResource
+&nbsp;&nbsp;private DockerClient dockerClient;
+
+&nbsp;&nbsp;@CubeDockerFile
+&nbsp;&nbsp;public static Archive<?> createContainer() {
+&nbsp;&nbsp;&nbsp;&nbsp;String dockerDescriptor = Descriptors.create(DockerDescriptor.class)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.from("jonmorehouse/ping-pong").exportAsString();
+
+&nbsp;&nbsp;&nbsp;&nbsp;return ShrinkWrap.create(GenericArchive.class)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add(new StringAsset(dockerDescriptor), "Dockerfile");
+&nbsp;&nbsp;}
+</code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;public URL getConnectionURL() {
+&nbsp;&nbsp;&nbsp;&nbsp;URL url = new URL("http://" + dockerHost + ":" + port);
+&nbsp;&nbsp;}
+}</code></pre>
+        <aside role="note">Dynamic dockerfile, or annotate class and find it in same package+classname, inner cubes</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">PingPongTest.java</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">@RunWith(Arquillian.class)
+public class PingPongTest {
+
+  @Cube
+  PingPongContainer pingPongContainer;
+  </code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;@Test
+&nbsp;&nbsp;public void shouldReturnOkAsPong() throws IOException {
+&nbsp;&nbsp;&nbsp;&nbsp;String pong = ping(pingPongContainer.getConnectionUrl());
+&nbsp;&nbsp;&nbsp;&nbsp;assertThat(pong, containsString("OK"));
+&nbsp;&nbsp;}
+}</code></pre>
+        <aside role="note">Classpath, Inject live PingPongContainer</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">arquillian.xml</h2>
+        <pre class="small language-xml"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">&lt;extension qualifier="docker"&gt;
+  &lt;property name="machineName"&gt;dev&lt;/property&gt;
+&lt;/extension&gt;</code></pre>
+        <aside role="note">Using boot2docker or native you don't need anything at all</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">Demo</h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars    </i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--alexoh" class="alexoh undefined">
+        <h3><b>The more we relay on being <span class='important'>online</span></b> <br/> <b>The more <span class='important'>offline</span> support is needed?.</b></h3>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--q" class="q undefined">
+        <h2 class="gothicfont">Arquillian <span class='important'>Cube Q</span></h2>
+        <aside role="note">Adding chaos to the system </aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><img src="images/toxirewrite.png" class="schemas">
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">What is <span class='important'>Q</span>?</h2>
+        <ul class="lists">
+          <li>Automatic redirect to <span class='important'>Toxic Proxy</span></li>
+          <li>Toxicity</li>
+          <li><span class='important'>Chaos</span> latency, bandwidth, down, slow_close, timeout, slicer </li>
+          <li>To come <span class='important'>Long test execution</span></li>
+          <aside role="note">Toxic the frontend service</aside>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">docker-compose.yml</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">helloworld:
+  image: lordofthejars/helloworld
+  ports:
+    - "8081:8080"
+  links:
+    - pingpong:pingpong
+    
+pingpong:
+  image: jonmorehouse/ping-pong
+  expose:
+      - "8080"</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">build.gradle</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">dependencies {
+  testCompile 'org.arquillian.cube.q:arquillian-cube-q-toxic:1.0.0.Alpha1'
+}</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont filegothic">ToxicFuntionalTestCase.java</h2>
+        <pre class="small language-javascript"><code class="bullet bespoke-bullet bespoke-bullet-active bespoke-bullet-current">@RunWith(Arquillian.class) //@Ignore
+public class ToxicFuntionalTestCase {
+
+  @ArquillianResource
+  private Q Q;
+  
+  @HostIp
+  private String ip;
+  </code><br><code class="bullet bespoke-bullet bespoke-bullet-inactive">&nbsp;&nbsp;@Test
+&nbsp;&nbsp;public void shouldSurviveOnLatency() throws Exception {
+&nbsp;&nbsp;&nbsp;&nbsp;Q.on("pingpong", 8080).latency(4000, 0, () -> {
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URL url = new URL("http://" + ip + ":" + 8081 + "/hw/HelloWorld");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String response = IOUtil.asString(url.openStream());
+
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;}
+}</code></pre>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <h2 class="gothicfont">Demo</h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars </i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--adathink" class="adathink undefined">
+        <h2 class="gothicfont smallgothic">Let's <span class='important'>wind down</span></h2>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section>
+        <ul class="lists">
+          <li><span class='important'>Unit tests</span> are important</li>
+          <li>But test in <span class='important'>production-like</span> environment</li>
+          <li><span class='important'>Shit</span> happens</li>
+          <li><span class='important'>Arquillian</span> extensions</li>
+          <aside role="note">unit tests as design tool. BDD, UI tests, Persistence tests</aside>
+        </ul>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section data-bespoke-backdrop="backdrop backdrop--deming" class="deming undefined">
+        <h4>It is <span class='important'>not necessary</span> to change. <br/> <span class='important'>Survival</span> is <span class='important'>not mandatory</span>.</h4>
+        <h3>W. Edwards Deming</h3>
+        <aside role="note">You can continue dooing manual tests</aside>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><img src="images/profile.jpg" class="avatar"><br><a href="http://www.slideshare.net/asotobu/continuous-delivery-as-code" style="border:none"><i class="fa fa-slideshare"></i>
+          <h3>http://www.slideshare.net/asotobu/continuous-delivery-as-code</h3><i class="fa fa-envelope"></i>
+          <h3>asotobu@gmail.com</h3></a>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+      <section><a href="https://github.com/arquillian/arquillian-cube/tree/master/docker/ftest-docker-containerobject" style="border:none">
+          <h5 style="font-size: .55em">github.com/arquillian/arquillian-cube/tree/master/docker/ftest-docker-containerobject</h5></a><a href="https://github.com/arquillian/arquillian-cube/tree/master/docker/ftest-docker-compose" style="border:none">
+          <h5 style="font-size: .55em">github.com/arquillian/arquillian-cube/tree/master/docker/ftest-docker-compose</h5></a><a href="http://github.com/lordofthejars/starwars" style="border:none">
+          <h5 style="font-size: .55em">github.com/lordofthejars/starwars</h5></a><a href="https://jenkins.io/" style="border:none">
+          <h5 style="font-size: .55em">https://jenkins.io/</h5></a><a href="https://jenkins.io/solutions/pipeline/" style="border:none">
+          <h5 style="font-size: .55em">https://jenkins.io/solutions/pipeline/</h5></a><a href="http://arquillian.org/" style="border:none">
+          <h5 style="font-size: .55em">http://arquillian.org/</h5></a>
+        <div class="footer"><i class="fa fa-twitter">&nbsp;alexsotob&nbsp;</i><i class="fa fa-github">&nbsp;lordofthejars</i></div>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>

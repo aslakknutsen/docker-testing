@@ -436,12 +436,11 @@ html
       
       +slide
         h2.gothicfont.filegothic ping-pong-container.jar
-        pre.small.language-javascript
+        pre.small.full-width.no-scroll.language-javascript
           code.bullet.bespoke-bullet.bespoke-bullet-active.bespoke-bullet-current.
             @Cube(value = "pingpong", portBinding = "5000->8080/tcp")
             public class PingPongContainer {
 
-          br
           code.bullet.bespoke-bullet.bespoke-bullet-inactive.
             &nbsp;&nbsp;@HostIp
             &nbsp;&nbsp;String dockerHost;
@@ -456,12 +455,10 @@ html
             &nbsp;&nbsp;public static Archive<?> createContainer() {
             &nbsp;&nbsp;&nbsp;&nbsp;String dockerDescriptor = Descriptors.create(DockerDescriptor.class)
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.from("jonmorehouse/ping-pong").exportAsString();
-                    
             &nbsp;&nbsp;&nbsp;&nbsp;return ShrinkWrap.create(GenericArchive.class)
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add(new StringAsset(dockerDescriptor), "Dockerfile");
             &nbsp;&nbsp;}
             
-          br
           code.bullet.bespoke-bullet.bespoke-bullet-inactive.
             &nbsp;&nbsp;public URL getConnectionURL() {
             &nbsp;&nbsp;&nbsp;&nbsp;URL url = new URL("http://" + dockerHost + ":" + port);
@@ -576,7 +573,7 @@ html
               
       +slide
         h2.gothicfont.filegothic ToxicFuntionalTestCase.java
-        pre.small.language-javascript
+        pre.small.full-width.language-javascript
           code.bullet.bespoke-bullet.bespoke-bullet-active.bespoke-bullet-current.
             @RunWith(Arquillian.class) //@Ignore
             public class ToxicFuntionalTestCase {

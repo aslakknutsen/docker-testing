@@ -1,0 +1,3 @@
+[submodule "demo/05_arquillian_cube_q"]
+	path = demo/05_arquillian_cube_q
+	url = git@github.com:lordofthejars/pingpongQ.git

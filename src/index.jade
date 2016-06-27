@@ -31,61 +31,33 @@ html
       +slide('mac')
         h1.small <span class='important'>Software</span> is eating the <span class='important'>world</span>
         aside(role='note') Every business is in the sw business, even landed ni traditional business Uber, AirBnb, JustEat
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         img.schemash(src='images/airport.png')
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         img.schemash(src='images/casino.png')
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide('test')
         h2.gothicfont <span class='important'>Automatic Tests</span> as Solution
         aside(role='note') Unit, Integration, Component, Contract, Security, e2e
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide('unittt')
         h2.gothicfont Unit tests <span class='important'>are not enough</span>
         aside(role='note') TDD, 100%coverage, but when you deploy, JPA, container features
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide('contract')
         h2.gothicfont <span class='important'>Sociable</span> Unit Tests
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide('indy')
         h2.gothicfont Will it Work in <span class='important'>Production</span> ?
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide('ci')
         h2.gothicfont <span class='important'>High-level Tests</span> Running in <br/> <span class='important'>Production-like</span> environment
         aside(role='note') Problem preparing containers, manual steps, maven plugin, debuging (embeded)
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
           
       +slide('arquillianf')
         
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-
       +slide
         h2.gothicfont What is <span class='important'>Arquillian</span>?
         ul.lists
@@ -96,9 +68,6 @@ html
           li JavaEE and <span class='important'>beyond</span>
           li <span class='important'>Open Source</span>
         aside(role='note') Segon punt explicar lifecycle
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         h2.gothicfont.filegothic build.gradle
@@ -121,10 +90,6 @@ html
                 &nbsp;&nbsp;testCompile 'org.apache.tomee:arquillian-tomee-remote:7.0.0'
                 }
               
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-      
       +slide
         h2.gothicfont.filegothic PlanetsTest.java
         pre.small.language-javascript
@@ -153,17 +118,10 @@ html
             &nbsp;&nbsp;&nbsp;&nbsp;assertThat(average, is("1699.42"));
             &nbsp;&nbsp;}
             }
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide('puzzle')
         h2.gothicfont Demo
         
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-
       +slide
         h2.gothicfont Principles of <span class='important'>Arquillian</span>?
         ul.lists
@@ -174,31 +132,18 @@ html
           li <span class='important'>Extensible</span> to new platforms
           li Ease of <span class='important'>deployment</span>
         aside(role='note') Maven importer
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide('whales')
         h2.gothicfont Docker
         aside(role='note') automates deployment of software containers
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         img.schemashh(style='width:75%;height:75%', src='images/dockerworkflow.png')
         aside(role='note') Arquillian Cube
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-        
 
       +slide('borg')
         h2.gothicfont Arquillian <span class='important'>Cube</span>
         aside(role='note') Arquillian extension for managing lifecycle
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         h2.gothicfont What is <span class='important'>Cube</span>?
@@ -209,9 +154,6 @@ html
           li Support for <span class='important'>containerless</span> systems
           li Ready for <span class='important'>Docker Machine</span>
         aside(role='note') Docker machine means testing any platform with docker support
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide
         h2.gothicfont.filegothic build.gradle
@@ -220,9 +162,6 @@ html
             dependencies {
               testCompile 'org.arquillian.cube:arquillian-cube-docker:1.0.0.Alpha11'
             }
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
           
       +slide
         h2.gothicfont.filegothic src/test/resources/arquillian.xml
@@ -245,9 +184,6 @@ html
             &nbsp;&nbsp;&nbsp;&nbsp;&lt;/configuration&gt;
             &nbsp;&nbsp;&lt;/container&gt;
             &lt;/arquillian&gt;
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide
         h2.gothicfont.filegothic docker-compose.yml
@@ -296,26 +232,13 @@ html
             &nbsp;&nbsp;&nbsp;&nbsp;URL obj = new URL(base, "HelloWorld");
             &nbsp;&nbsp;}
 
-
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-      
       +slide('puzzle')
         h2.gothicfont Demo
             
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-      
-      
       +slide('emptyship')
         h2.gothicfont Containerless
         aside(role='note') Previous demo the image must be created before test, want to use Shrinkwrap for containerless too (nodejs, ...)
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-      
+
       +slide
         h2.gothicfont What is <span class='important'>Containerless</span>?
         ul.lists
@@ -323,9 +246,6 @@ html
           li Including but <span class='important'>not limited</span> Nodejs, Wildfly Swarm, Spring Boot, Vert.x, Go
           li <span class='important'>Shrinkwrap</span> support
         aside(role='note') Basically Shrinkwrap copies content into known location for docker build
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide
         h2.gothicfont.filegothic build.gradle
@@ -334,9 +254,6 @@ html
             dependencies {
               testCompile 'org.arquillian.cube:arquillian-cube-containerless:1.0.0.Alpha11'
             }
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide
         h2.gothicfont.filegothic NodejsTest.java
@@ -356,9 +273,6 @@ html
                 public void shouldReturnMessageFromNodeJs(@ArquillianResource URL base) {
                 }
             }
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide
         h2.gothicfont.filegothic DockerfileTemplate
@@ -374,9 +288,6 @@ html
             EXPOSE 8080
 
             CMD [ "npm", "start" ]
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
           
       +slide
         h2.gothicfont.filegothic docker-compose.yml
@@ -385,10 +296,6 @@ html
             nodeexample:
               build: src/test/resources
               
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-      
       +slide
         h2.gothicfont.filegothic arquillian.xml
         pre.small.language-xml
@@ -405,23 +312,13 @@ html
               &lt;/configuration&gt;
             &lt;/container&gt;
         aside(role='note') Explain lifecycle
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide('puzzle')
         h2.gothicfont Demo
                 
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-      
       +slide('containerstack')
         h2.gothicfont <span class='important'>Container Object</span> pattern
         aside(role='note') Like Page Object (obj inmem representation)
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide
         h2.gothicfont What are <span class='important'>Container Objects</span>?
@@ -430,9 +327,6 @@ html
           li Single Responsibility
           li <span class='important'>Reuse</span>
          aside(role='note') JAR file for reuse (put in Classpath and thats all)
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide
         h2.gothicfont.filegothic ping-pong-container.jar
@@ -465,9 +359,6 @@ html
             &nbsp;&nbsp;}
             }
         aside(role='note') Dynamic dockerfile, or annotate class and find it in same package+classname, inner cubes
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide
         h2.gothicfont.filegothic PingPongTest.java
@@ -488,9 +379,6 @@ html
             &nbsp;&nbsp;}
             }
         aside(role='note') Classpath, Inject live PingPongContainer
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide
         h2.gothicfont.filegothic arquillian.xml
@@ -500,35 +388,19 @@ html
               &lt;property name="machineName"&gt;dev&lt;/property&gt;
             &lt;/extension&gt;
         aside(role='note') Using boot2docker or native you don't need anything at all
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
           
       +slide('puzzle')
         h2.gothicfont Demo
                     
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-      
       +slide('alexoh')
         h3 <b>The more we rely on being <span class='important'>online,</span></b> <br/> <b>the more <span class='important'>offline</span> support is needed..?</b>
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
       
       +slide('q')
         h2.gothicfont Arquillian <span class='important'>Cube Q</span>
         aside(role='note') Adding chaos to the system 
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
             
       +slide
         img.schemas(src='images/toxirewrite.png')
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         h2.gothicfont What is <span class='important'>Q</span>?
@@ -537,9 +409,6 @@ html
           li Toxicity
           li <span class='important'>Chaos</span> latency, bandwidth, down, slow_close, timeout, slicer 
           aside(role='note') Toxic the frontend service
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         h2.gothicfont.filegothic docker-compose.yml
@@ -556,9 +425,6 @@ html
               image: jonmorehouse/ping-pong
               expose:
                   - "8080"
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
           
       +slide
         h2.gothicfont.filegothic build.gradle
@@ -567,9 +433,6 @@ html
             dependencies {
               testCompile 'org.arquillian.cube.q:arquillian-cube-q-toxic:1.0.0.Alpha1'
             }
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
               
       +slide
         h2.gothicfont.filegothic ToxicFuntionalTestCase.java
@@ -596,22 +459,12 @@ html
             &nbsp;&nbsp;&nbsp;&nbsp;});
             &nbsp;&nbsp;}
             }
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide('puzzle')
         h2.gothicfont Demo
                         
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-
       +slide('adathink')
         h2.gothicfont.smallgothic Let's <span class='important'>recap</span>
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         ul.lists
@@ -621,17 +474,11 @@ html
           li Be prepared for <span class='important'>Unexpected</span>
           li Arquillian works in <span class='important'>Non Java</span> projects
           aside(role='note') unit tests as design tool. BDD, UI tests, Persistence tests
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide('deming')
         h4 It is <span class='important'>not necessary</span> to change. <br/> <span class='important'>Survival</span> is <span class='important'>not mandatory</span>.
         h3 W. Edwards Deming
         aside(role='note') You can continue dooing manual tests
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         div.main-wrap
@@ -647,10 +494,6 @@ html
             h2.gothicfont.important(style='font-size:1em') Red Hat
             h2.gothicfont(style='font-size:1em') Arquillian Lead
             h2.gothicfont.important(style='font-size:1em') @aslakknutsen
-
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
 
       +slide
         a(href='http://arquillian.org/', style='border:none')
@@ -671,9 +514,5 @@ html
           h5(style='font-size: .55em') github.com/arquillian/arquillian-cube/tree/master/docker/ftest-docker-compose
         a(href='http://toxiproxy.io', style='border:none')
           h5(style='font-size: .55em') toxiproxy.io
-        div.footer
-          i.fa.fa-twitter &nbsp;majson&nbsp;
-          i.fa.fa-twitter &nbsp;aslakknutsen
-
 
     script(src='build/build.js')

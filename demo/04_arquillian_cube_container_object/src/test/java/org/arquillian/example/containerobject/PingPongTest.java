@@ -1,7 +1,9 @@
 package org.arquillian.example.containerobject;
 
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.assertThat;
+import org.arquillian.cube.containerobject.Cube;
+import org.jboss.arquillian.junit.Arquillian;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,10 +11,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.arquillian.cube.containerobject.Cube;
-import org.jboss.arquillian.junit.Arquillian;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.junit.Assert.assertThat;
 
 // # tag::arquillian_cube_test[]
 @RunWith(Arquillian.class)
@@ -27,7 +27,7 @@ public class PingPongTest {
         assertThat(pong, containsString("OK"));
     }
 
-//  # end::arquillian_cube_test[]
+    //  # end::arquillian_cube_test[]
     public String ping(URL url) throws IOException {
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");

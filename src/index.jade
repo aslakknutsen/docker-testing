@@ -11,7 +11,7 @@ html
   head
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-  title Dockerized system testing, with a dash of chaos
+  title Meet the assertable Chaos Monkeys for your Docker system
 
   link(rel='stylesheet', type='text/css', href='build/build.css')
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
@@ -23,8 +23,8 @@ html
       +slide('main')
        
       +slide('title')
-        h2.title Dockerized system testing
-        h3 <span class='important' style='font-size:1.5em; letter-spacing: 0.1em;'>with a dash of chaos</span>
+        h2.title Meet the assertable Chaos Monkeys
+        h3 <span class='important' style='font-size:1.5em; letter-spacing: 0.1em;'>for your Docker system</span>
         i.goldColor.smallstoketitle.fa.fa-twitter-square <span class='gothicfont' style='color: gold; font-size:1.2em; letter-spacing: 0.05em;'>&nbsp;majson &nbsp;</span>
         i.goldColor.smallstoketitle.fa.fa-twitter-square <span class='gothicfont' style='color: gold; font-size:1.2em; letter-spacing: 0.05em;'>&nbsp;aslakknutsen &nbsp;</span>
       
@@ -106,22 +106,15 @@ html
                   .addAsResource("swapitest.properties", "swapi.properties");
             &nbsp;&nbsp;}
             
-          br
-          code.bullet.bespoke-bullet.bespoke-bullet-inactive.
-            &nbsp;&nbsp;@ArquillianResource
-            &nbsp;&nbsp;URL url;
-            
             &nbsp;&nbsp;@Test
-            &nbsp;&nbsp;public void shouldReturnTheAverage() {
-            &nbsp;&nbsp;&nbsp;&nbsp;final String average = RestAssured.get(url.toExternalForm() + 
-                                      "rest/planet/orbital/average").asString();
-            &nbsp;&nbsp;&nbsp;&nbsp;assertThat(average, is("1699.42"));
-            &nbsp;&nbsp;}
+            &nbsp;&nbsp;public void shouldReturnTheAverage(@ArquillianResource URL url) {
+            &nbsp;&nbsp;&nbsp;&nbsp;given().baseUrl(url.toExternalForm())
+            &nbsp;&nbsp;&nbsp;&nbsp;.when()
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.get("rest/planet/orbital/average")
+            &nbsp;&nbsp;&nbsp;&nbsp;.then()
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.assertThat().body(equalTo("1699.42"))
             }
 
-      +slide('puzzle')
-        h2.gothicfont Demo
-        
       +slide
         h2.gothicfont Principles of <span class='important'>Arquillian</span>?
         ul.lists
@@ -329,7 +322,7 @@ html
          aside(role='note') JAR file for reuse (put in Classpath and thats all)
       
       +slide
-        h2.gothicfont.filegothic ping-pong-container.jar
+        h2.gothicfont.filegothic PingPongContainer.java
         pre.small.full-width.no-scroll.language-javascript
           code.bullet.bespoke-bullet.bespoke-bullet-active.bespoke-bullet-current.
             @Cube(value = "pingpong", portBinding = "5000->8080/tcp")

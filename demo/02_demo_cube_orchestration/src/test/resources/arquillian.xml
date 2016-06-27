@@ -22,11 +22,8 @@
           remove: true
         portBindings: [8081->8080/tcp, 9991->9990/tcp]
         await:
-          strategy: http
-          responseCode: 200
-          url: http://localhost:8081
-          sleepPollingTime: 200 ms
-          iterations: 100
+          strategy: sleeping
+          sleepTime: 6 s
       wildfly_mysql_latest:
         extends: wildfly
         links:
@@ -37,9 +34,8 @@
         env: [MYSQL_ROOT_PASSWORD=letmein, MYSQL_DATABASE=ape, MYSQL_USER=ape, MYSQL_PASSWORD=letmein]
         # end::arquillian_cube_orchestration_config[]
         await:
-          strategy: log
-          
-          sleepTime: 8 s
+          strategy: sleeping
+          sleepTime: 2 s
       wildfly_mysql_5_5:
         extends: wildfly
         links:

@@ -108,7 +108,9 @@ html
                   .addClasses(SwapiGateway.class, PlanetService.class, ...)
                   .addAsResource("swapitest.properties", "swapi.properties");
             &nbsp;&nbsp;}
-            
+
+          br
+          code.bullet.bespoke-bullet.bespoke-bullet-inactive.
             &nbsp;&nbsp;@Test
             &nbsp;&nbsp;public void shouldReturnTheAverage(@ArquillianResource URL url) {
             &nbsp;&nbsp;&nbsp;&nbsp;given().baseUrl(url.toExternalForm())
@@ -116,7 +118,7 @@ html
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.get("rest/planet/orbital/average")
             &nbsp;&nbsp;&nbsp;&nbsp;.then()
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.assertThat().body(equalTo("1699.42"))
-            }
+            &nbsp;&nbsp;}
 
       +slide
         h2.gothicfont Principles of <span class='important'>Arquillian</span>

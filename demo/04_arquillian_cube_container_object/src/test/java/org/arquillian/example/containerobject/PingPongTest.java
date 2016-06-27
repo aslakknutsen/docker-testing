@@ -1,5 +1,6 @@
 package org.arquillian.example.containerobject;
 
+import org.apache.commons.io.IOUtils;
 import org.arquillian.cube.containerobject.Cube;
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.Test;
@@ -14,11 +15,10 @@ import java.net.URL;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
-// # tag::arquillian_cube_test[]
 @RunWith(Arquillian.class)
 public class PingPongTest {
 
-    @Cube //<1>
+    @Cube
     private PingPongContainer pingPongContainer;
 
     @Test
@@ -27,22 +27,20 @@ public class PingPongTest {
         assertThat(pong, containsString("OK"));
     }
 
-    //  # end::arquillian_cube_test[]
     public String ping(URL url) throws IOException {
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
 
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuilder response = new StringBuilder();
+        final String response = readResponse(con);
 
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
-
-        return response.toString();
+        con.disconnect();
+        return response;
     }
 
+    private String readResponse(HttpURLConnection con) throws IOException {
+        try (BufferedReader in = new BufferedReader(
+                new InputStreamReader(con.getInputStream()))) {
+            return IOUtils.toString(in);
+        }
+    }
 }

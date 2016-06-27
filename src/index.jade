@@ -24,7 +24,6 @@ html
        
       +slide('title')
         h2.title Meet the assertable Chaos Monkeys
-        h3 <span class='important' style='font-size:1.5em; letter-spacing: 0.1em;'>for your Docker system</span>
         i.goldColor.smallstoketitle.fa.fa-twitter-square <span class='gothicfont' style='color: gold; font-size:1.2em; letter-spacing: 0.05em;'>&nbsp;majson &nbsp;</span>
         i.goldColor.smallstoketitle.fa.fa-twitter-square <span class='gothicfont' style='color: gold; font-size:1.2em; letter-spacing: 0.05em;'>&nbsp;aslakknutsen &nbsp;</span>
       
@@ -65,9 +64,8 @@ html
           li Fills the <span class='important'>gap</span> between Unit/Integration tests
           li Child's play
           li Any kind of high-level tests
-          li JavaEE and <span class='important'>beyond</span>
+          li Java EE and <span class='important'>beyond</span>
           li <span class='important'>Open Source</span>
-        aside(role='note') Segon punt explicar lifecycle
 
       +slide
         h2.gothicfont.filegothic build.gradle
@@ -116,10 +114,10 @@ html
             }
 
       +slide
-        h2.gothicfont Principles of <span class='important'>Arquillian</span>?
+        h2.gothicfont Principles of <span class='important'>Arquillian</span>
         ul.lists
           li <span class='important'>Portable</span> tests
-          li Executable from <span class='important'>IDE</span> and <span class='important'>buildtool</span>
+          li Executable from <span class='important'>IDE</span> and <span class='important'>build tool</span>
           li <span class='important'>Reuse</span> exitsing frameworks
           li <span class='important'>Flexible</span> to adapt technologies
           li <span class='important'>Extensible</span> to new platforms
@@ -143,7 +141,7 @@ html
         ul.lists
           li Manage lifecycle of <span class='important'>Docker</span> containers
           li Uses <span class='important'>Arquillian</span> remote adapters
-          li <span class='important'>Orchestrate</span> containers
+          li <span class='important'>Orchestrates</span> containers
           li Support for <span class='important'>containerless</span> systems
           li Ready for <span class='important'>Docker Machine</span>
         aside(role='note') Docker machine means testing any platform with docker support
@@ -373,15 +371,6 @@ html
             }
         aside(role='note') Classpath, Inject live PingPongContainer
       
-      +slide
-        h2.gothicfont.filegothic arquillian.xml
-        pre.small.language-xml
-          code.bullet.bespoke-bullet.bespoke-bullet-active.bespoke-bullet-current.
-            &lt;extension qualifier="docker"&gt;
-              &lt;property name="machineName"&gt;dev&lt;/property&gt;
-            &lt;/extension&gt;
-        aside(role='note') Using boot2docker or native you don't need anything at all
-          
       +slide('puzzle')
         h2.gothicfont Demo
                     
@@ -464,14 +453,14 @@ html
           li <span class='important'>Unit tests</span> are important
           li But test in <span class='important'>production-like</span> environment
           li <span class='important'>Arquillian</span> extensions
-          li Be prepared for <span class='important'>Unexpected</span>
-          li Arquillian works in <span class='important'>Non Java</span> projects
+          li Expect <span class='important'>unexpected</span>
+          li Arquillian works for <span class='important'>Non Java</span> projects
           aside(role='note') unit tests as design tool. BDD, UI tests, Persistence tests
 
       +slide('deming')
         h4 It is <span class='important'>not necessary</span> to change. <br/> <span class='important'>Survival</span> is <span class='important'>not mandatory</span>.
         h3 W. Edwards Deming
-        aside(role='note') You can continue dooing manual tests
+        aside(role='note') You can continue doing manual tests
 
       +slide
         div.main-wrap

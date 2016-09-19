@@ -11,7 +11,7 @@ html
   head
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-  title Meet the assertable Chaos Monkeys for your Docker system
+  title Dockerized System Testing, with a Dash of Chaos
 
   link(rel='stylesheet', type='text/css', href='build/build.css')
   link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
@@ -23,7 +23,7 @@ html
       +slide('main')
        
       +slide('title')
-        h2.title Meet the assertable Chaos Monkeys
+        h2.title Dockerized System Testing, with a Dash of Chaos
       
       +slide('mac')
         h1.small <span class='important'>Software</span> is eating the <span class='important'>world</span>
@@ -146,10 +146,11 @@ html
       +slide
         h2.gothicfont What is <span class='important'>Cube</span>?
         ul.lists
-          li Manage lifecycle of <span class='important'>Docker</span> containers
+          li Manage lifecycle of <span class='important'>docker</span> containers
           li Uses <span class='important'>Arquillian</span> remote adapters
           li <span class='important'>Orchestrates</span> containers
           li Support for <span class='important'>containerless</span> systems
+          li Ready for <span class='important'>OpenShift v3</span>
           li Ready for <span class='important'>Docker Machine</span>
         aside(role='note') Docker machine means testing any platform with docker support
       
@@ -389,15 +390,22 @@ html
         aside(role='note') Adding chaos to the system 
             
       +slide
-        img.schemas(src='images/toxirewrite.png')
+        h2.gothicfont What is <span class='important'>Q:</span> Container Chaos?
+        ul.lists
+          li <span class='important'>Chaos</span> stop, kill & remove containers
 
       +slide
-        h2.gothicfont What is <span class='important'>Q</span>?
+        h2.gothicfont What is <span class='important'>Q:</span> Operative System Chaos?
         ul.lists
-          li Automatic redirect to <span class='important'>Toxic Proxy</span>
-          li Toxicity
-          li <span class='important'>Chaos</span> latency, bandwidth, down, slow_close, timeout, slicer 
-          aside(role='note') Toxic the frontend service
+          li <span class='important'>Chaos</span> block ports, burn cpu, burn io, fill disk, kill process & null route
+
+      +slide
+        h2.gothicfont What is <span class='important'>Q:</span> Network Chaos?
+        ul.lists
+          li <span class='important'>Chaos</span> latency, bandwidth, down, slow_close, timeout & slicer 
+
+      +slide
+        img.schemas(src='images/toxirewrite.png')
 
       +slide
         h2.gothicfont.filegothic docker-compose.yml
@@ -431,7 +439,7 @@ html
             public class ToxicFuntionalTestCase {
 
               @ArquillianResource
-              private Q Q;
+              private NetworkChaos networkChaos;
 
               @HostIp
               private String ip;
@@ -440,7 +448,7 @@ html
           code.bullet.bespoke-bullet.bespoke-bullet-inactive.
             &nbsp;&nbsp;@Test
             &nbsp;&nbsp;public void shouldSurviveOnLatency() throws Exception {
-            &nbsp;&nbsp;&nbsp;&nbsp;Q.on("pingpong", 8080).latency(4000, 0, () -> {
+            &nbsp;&nbsp;&nbsp;&nbsp;networkChaos.on("pingpong", 8080).latency(4000, 0, () -> {
               
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URL url = new URL("http://" + ip + ":" + 8081 + "/hw/HelloWorld");
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String response = IOUtil.asString(url.openStream());
@@ -474,14 +482,14 @@ html
           div.leftbar
             h2.gothicfont(style='font-size:2em') Bartosz<br/>Majsak
             br
-            h2.gothicfont.important(style='font-size:1em') Atos Consulting
-            h2.gothicfont(style='font-size:1em') Code monkey
+            h2.gothicfont.important(style='font-size:1em') Red Hat
+            h2.gothicfont(style='font-size:1em') Arquillian Lead
             h2.gothicfont.important(style='font-size:1em') @majson
           div.rightbar
             h2.gothicfont(style='font-size:2em') Aslak<br/>Knutsen
             br
             h2.gothicfont.important(style='font-size:1em') Red Hat
-            h2.gothicfont(style='font-size:1em') Arquillian Lead
+            h2.gothicfont(style='font-size:1em') almighty lead
             h2.gothicfont.important(style='font-size:1em') @aslakknutsen
 
       +slide

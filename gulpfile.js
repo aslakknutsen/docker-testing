@@ -96,12 +96,14 @@ gulp.task('clean:images', function() {
 });
 
 gulp.task('connect', ['build'], function(done) {
+  var port = 8888;
   connect.server({
     root: 'dist',
+    port: port,
     livereload: true
   });
 
-  opn('http://localhost:8080', done);
+  opn('http://localhost:' + port, done);
 });
 
 gulp.task('watch', function() {

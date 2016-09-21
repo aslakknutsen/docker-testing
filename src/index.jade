@@ -233,7 +233,74 @@ html
 
       +slide('puzzle')
         h2.gothicfont Demo
+                          
+      +slide('containerstack')
+        h2.gothicfont <span class='important'>Container Object</span>
+        aside(role='note') Like Page Object (obj inmem representation)
+      
+      +slide
+        h2.gothicfont What are <span class='important'>Container Objects</span>?
+        ul.lists
+          li <span class='important'>Encapsulate</span> containers (Operations and Configuration)
+          li Single Responsibility
+          li <span class='important'>Reuse</span>
+         aside(role='note') JAR file for reuse (put in Classpath and thats all)
+      
+      +slide
+        h2.gothicfont.filegothic PingPongContainer.java
+        pre.small.full-width.no-scroll.language-javascript
+          code.bullet.bespoke-bullet.bespoke-bullet-active.bespoke-bullet-current.
+            @Cube(value = "pingpong", portBinding = "5000->8080/tcp")
+            public class PingPongContainer {
+
+          code.bullet.bespoke-bullet.bespoke-bullet-inactive.
+            &nbsp;&nbsp;@HostIp
+            &nbsp;&nbsp;String dockerHost;
+
+            &nbsp;&nbsp;@HostPort(8080)
+            &nbsp;&nbsp;private int port;
+              
+            &nbsp;&nbsp;@ArquillianResource
+            &nbsp;&nbsp;private DockerClient dockerClient;
+              
+            &nbsp;&nbsp;@CubeDockerFile
+            &nbsp;&nbsp;public static Archive<?> createContainer() {
+            &nbsp;&nbsp;&nbsp;&nbsp;String dockerDescriptor = Descriptors.create(DockerDescriptor.class)
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.from("jonmorehouse/ping-pong").exportAsString();
+            &nbsp;&nbsp;&nbsp;&nbsp;return ShrinkWrap.create(GenericArchive.class)
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add(new StringAsset(dockerDescriptor), "Dockerfile");
+            &nbsp;&nbsp;}
             
+          code.bullet.bespoke-bullet.bespoke-bullet-inactive.
+            &nbsp;&nbsp;public URL getConnectionURL() {
+            &nbsp;&nbsp;&nbsp;&nbsp;URL url = new URL("http://" + dockerHost + ":" + port);
+            &nbsp;&nbsp;}
+            }
+        aside(role='note') Dynamic dockerfile, or annotate class and find it in same package+classname, inner cubes
+      
+      +slide
+        h2.gothicfont.filegothic PingPongTest.java
+        pre.small.language-javascript
+          code.bullet.bespoke-bullet.bespoke-bullet-active.bespoke-bullet-current.
+            @RunWith(Arquillian.class)
+            public class PingPongTest {
+
+              @Cube
+              PingPongContainer pingPongContainer;
+          
+          br
+          code.bullet.bespoke-bullet.bespoke-bullet-inactive.
+            &nbsp;&nbsp;@Test
+            &nbsp;&nbsp;public void shouldReturnOkAsPong() throws IOException {
+            &nbsp;&nbsp;&nbsp;&nbsp;String pong = ping(pingPongContainer.getConnectionUrl());
+            &nbsp;&nbsp;&nbsp;&nbsp;assertThat(pong, containsString("OK"));
+            &nbsp;&nbsp;}
+            }
+        aside(role='note') Classpath, Inject live PingPongContainer
+      
+      +slide('puzzle')
+        h2.gothicfont Demo
+
       +slide('emptyship')
         h2.gothicfont Containerless
         aside(role='note') Previous demo the image must be created before test, want to use Shrinkwrap for containerless too (nodejs, ...)
@@ -311,73 +378,6 @@ html
               &lt;/configuration&gt;
             &lt;/container&gt;
         aside(role='note') Explain lifecycle
-      
-      +slide('puzzle')
-        h2.gothicfont Demo
-                
-      +slide('containerstack')
-        h2.gothicfont <span class='important'>Container Object</span>
-        aside(role='note') Like Page Object (obj inmem representation)
-      
-      +slide
-        h2.gothicfont What are <span class='important'>Container Objects</span>?
-        ul.lists
-          li <span class='important'>Encapsulate</span> containers (Operations and Configuration)
-          li Single Responsibility
-          li <span class='important'>Reuse</span>
-         aside(role='note') JAR file for reuse (put in Classpath and thats all)
-      
-      +slide
-        h2.gothicfont.filegothic PingPongContainer.java
-        pre.small.full-width.no-scroll.language-javascript
-          code.bullet.bespoke-bullet.bespoke-bullet-active.bespoke-bullet-current.
-            @Cube(value = "pingpong", portBinding = "5000->8080/tcp")
-            public class PingPongContainer {
-
-          code.bullet.bespoke-bullet.bespoke-bullet-inactive.
-            &nbsp;&nbsp;@HostIp
-            &nbsp;&nbsp;String dockerHost;
-
-            &nbsp;&nbsp;@HostPort(8080)
-            &nbsp;&nbsp;private int port;
-              
-            &nbsp;&nbsp;@ArquillianResource
-            &nbsp;&nbsp;private DockerClient dockerClient;
-              
-            &nbsp;&nbsp;@CubeDockerFile
-            &nbsp;&nbsp;public static Archive<?> createContainer() {
-            &nbsp;&nbsp;&nbsp;&nbsp;String dockerDescriptor = Descriptors.create(DockerDescriptor.class)
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.from("jonmorehouse/ping-pong").exportAsString();
-            &nbsp;&nbsp;&nbsp;&nbsp;return ShrinkWrap.create(GenericArchive.class)
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.add(new StringAsset(dockerDescriptor), "Dockerfile");
-            &nbsp;&nbsp;}
-            
-          code.bullet.bespoke-bullet.bespoke-bullet-inactive.
-            &nbsp;&nbsp;public URL getConnectionURL() {
-            &nbsp;&nbsp;&nbsp;&nbsp;URL url = new URL("http://" + dockerHost + ":" + port);
-            &nbsp;&nbsp;}
-            }
-        aside(role='note') Dynamic dockerfile, or annotate class and find it in same package+classname, inner cubes
-      
-      +slide
-        h2.gothicfont.filegothic PingPongTest.java
-        pre.small.language-javascript
-          code.bullet.bespoke-bullet.bespoke-bullet-active.bespoke-bullet-current.
-            @RunWith(Arquillian.class)
-            public class PingPongTest {
-
-              @Cube
-              PingPongContainer pingPongContainer;
-          
-          br
-          code.bullet.bespoke-bullet.bespoke-bullet-inactive.
-            &nbsp;&nbsp;@Test
-            &nbsp;&nbsp;public void shouldReturnOkAsPong() throws IOException {
-            &nbsp;&nbsp;&nbsp;&nbsp;String pong = ping(pingPongContainer.getConnectionUrl());
-            &nbsp;&nbsp;&nbsp;&nbsp;assertThat(pong, containsString("OK"));
-            &nbsp;&nbsp;}
-            }
-        aside(role='note') Classpath, Inject live PingPongContainer
       
       +slide('puzzle')
         h2.gothicfont Demo
